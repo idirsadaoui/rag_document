@@ -7,12 +7,12 @@ from utils import prompt_output
 import streamlit as st
 import yaml
 import os
-import toml
 
 warnings.filterwarnings('ignore')
 
 api_key = os.environ['OPENAI_API_KEY']
 
+openai.api_key = os.environ['OPENAI_API_KEY']
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
