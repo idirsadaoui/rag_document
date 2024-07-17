@@ -9,7 +9,7 @@ import yaml
 import os
 import toml
 
-config = toml.load("/.streamlit/config.toml")
+config = toml.load(".streamlit/config.toml")
 
 api_key = config["openai"]["OPENAI_API_KEY"]
 
