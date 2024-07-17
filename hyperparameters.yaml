@@ -1,0 +1,14 @@
+# The Ollama model to use
+model_llm: "gemma2"
+
+# The LLM embedding model to use
+model_embedding: "mxbai-embed-large"
+
+# The chunk size for the split
+chunk_size: 1000
+
+# The chunk overlap for the split
+chunk_overlap: 200
+
+# number of the most similar chains for the prompt context
+k_results: 5
