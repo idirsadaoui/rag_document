@@ -34,7 +34,7 @@ if file_type == "pdf":
 if file_type == "docx":
     st.title("Word document Q&A")
 
-llm_model = ChatOpenAI()
+llm_model = ChatOpenAI(api_key = "sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP")
 
 @st.cache_resource(show_spinner=True)
 def load_qa(type_file):
@@ -43,7 +43,7 @@ def load_qa(type_file):
                                         separator="\n",
                                         chunk_size=CHUNK_SIZE,
                                         chunk_overlap=CHUNK_OVERLAP,
-                                        embedding_function=OpenAIEmbeddings(show_progress_bar=False),
+                                        embedding_function=OpenAIEmbeddings(show_progress_bar=False, openai_api_key="sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP"),
                                         type_file=type_file
                                         )
 
