@@ -4,16 +4,15 @@ from main import rag_document_embeddings
 import openai
 import warnings
 from utils import prompt_output
-from dotenv import load_dotenv
 import streamlit as st
 import yaml
 import os
 
 warnings.filterwarnings('ignore')
 
-load_dotenv()
+openai.api_key = "sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP"
 
-openai.api_key = os.getenv('OPENAI_API_KEY')
+os.environ['OPENAI_API_KEY'] = "sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP"
 
 
 CHUNK_SIZE = 1000
