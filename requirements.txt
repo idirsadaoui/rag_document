@@ -14,5 +14,4 @@ python-dotenv==1.0.1
 streamlit==1.36.0
 PyPDF2==3.0.1
 langchain-openai==0.1.7
-faiss-cpu
-faiss-gpu
+faiss-cpu==1.8.0.post1
