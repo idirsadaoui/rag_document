@@ -5,10 +5,7 @@ from langchain_community.vectorstores import FAISS
 from PyPDF2 import PdfReader
 import yaml
 
-with open(f"hyperparameters.yaml") as f:
-    params = yaml.load(f, Loader=yaml.loader.SafeLoader)
-
-K_RESULTS = params["k_results"]
+K_RESULTS = 5
 
 
 def pdf_2_txt(pdf):
