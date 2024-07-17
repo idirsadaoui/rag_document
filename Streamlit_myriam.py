@@ -10,9 +10,9 @@ import os
 
 warnings.filterwarnings('ignore')
 
-openai.api_key = "sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP"
+openai.api_key = "sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0"
 
-os.environ['OPENAI_API_KEY'] = "sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP"
+os.environ['OPENAI_API_KEY'] = "sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0"
 
 
 CHUNK_SIZE = 1000
@@ -34,7 +34,7 @@ if file_type == "pdf":
 if file_type == "docx":
     st.title("Word document Q&A")
 
-llm_model = ChatOpenAI(api_key = "sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP")
+llm_model = ChatOpenAI(api_key = "sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0")
 
 @st.cache_resource(show_spinner=True)
 def load_qa(type_file):
@@ -43,7 +43,7 @@ def load_qa(type_file):
                                         separator="\n",
                                         chunk_size=CHUNK_SIZE,
                                         chunk_overlap=CHUNK_OVERLAP,
-                                        embedding_function=OpenAIEmbeddings(show_progress_bar=False, openai_api_key="sk-proj-Kvnj4KbX6SIWcwJNwWb3T3BlbkFJZcWiVF8TTu1YSpoz56qP"),
+                                        embedding_function=OpenAIEmbeddings(show_progress_bar=False, openai_api_key="sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0"),
                                         type_file=type_file
                                         )
 
