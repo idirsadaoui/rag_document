@@ -5,14 +5,17 @@ import openai
 import warnings
 from utils import prompt_output
 import streamlit as st
+from dotenv import load_dotenv
 import yaml
 import os
 
+load_dotenv()
+
 warnings.filterwarnings('ignore')
 
-openai.api_key = "sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-os.environ['OPENAI_API_KEY'] = "sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0"
+os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
 
 
 CHUNK_SIZE = 1000
@@ -34,7 +37,7 @@ if file_type == "pdf":
 if file_type == "docx":
     st.title("Word document Q&A")
 
-llm_model = ChatOpenAI(api_key = "sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0")
+llm_model = ChatOpenAI(api_key = os.getenv("OPENAI_API_KEY"))
 
 @st.cache_resource(show_spinner=True)
 def load_qa(type_file):
@@ -43,7 +46,7 @@ def load_qa(type_file):
                                         separator="\n",
                                         chunk_size=CHUNK_SIZE,
                                         chunk_overlap=CHUNK_OVERLAP,
-                                        embedding_function=OpenAIEmbeddings(show_progress_bar=False, openai_api_key="sk-proj-fWhcijt8eMg1VlNHIewBT3BlbkFJxU3lxuTPy5kPfsmHOPs0"),
+                                        embedding_function=OpenAIEmbeddings(show_progress_bar=False, openai_api_key=os.getenv("OPENAI_API_KEY")),
                                         type_file=type_file
                                         )
 
