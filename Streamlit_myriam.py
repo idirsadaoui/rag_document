@@ -9,11 +9,9 @@ import yaml
 import os
 import toml
 
-api_key = st.secrets["OPENAI_API_KEY"]
-
 warnings.filterwarnings('ignore')
 
-os.environ['OPENAI_API_KEY'] = api_key
+api_key = os.environ['OPENAI_API_KEY']
 
 
 CHUNK_SIZE = 1000
